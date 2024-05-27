@@ -1,0 +1,27 @@
+{
+  "name": "kemsu_praktik",
+  "version": "1.0.0",
+  "description": "Test Description",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest --ui",
+    "coverage": "vitest run --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ser4eese/kemsu_praktik.git"
+  },
+  "author": "Ser4eese",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ser4eese/kemsu_praktik/issues"
+  },
+  "homepage": "https://github.com/Ser4eese/kemsu_praktik#readme",
+  "devDependencies": {
+    "@vitest/browser": "^1.6.0",
+    "@vitest/ui": "^1.6.0",
+    "jsdom": "^24.1.0",
+    "vitest": "^1.6.0",
+    "webdriverio": "^8.38.0"
+  }
+}
