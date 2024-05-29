@@ -1,0 +1,33 @@
+name: Tests
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    if: ${{github.head_ref == '0-module' || github.head_ref == '1-module' || github.head_ref == '2-module'}}
+    env:
+      SPRINT: ${{github.head_ref}}
+      TERM: xterm-256color
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
+    steps:
+    - name: Set up GitHub Actions
+      uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Сheck if the repository is private
+      if: ${{github.event.repository.private}}
+      run: exit 1
+    - name: Get testing lib
+      run: set -eu && git clone https://github.com/Ser4eese/kemsu_praktik_test /tmp/tests
+
+    - name: Run tests (0-module)
+      if: ${{github.head_ref >= '0-module'}}
+      run: cp /tmp/tests/0-module.test.js ./0-module && npm test
