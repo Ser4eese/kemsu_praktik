@@ -2,8 +2,6 @@ name: Tests
 
 on:
   pull_request:
-    branches:
-      - main
 
 jobs:
   test:
@@ -30,4 +28,8 @@ jobs:
 
     - name: Run tests (0-module)
       if: ${{github.head_ref >= '0-module'}}
+<<<<<<< HEAD
       run: cp /tmp/tests/0-module.test.js ./0-module && npm test
+=======
+      run: cp /tmp/tests/0-module.test.js ./0-module && npm test
+>>>>>>> 18a71b1925ab55afc2b36eb4f653d61d27a2ccfd
