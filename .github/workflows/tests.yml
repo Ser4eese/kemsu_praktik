@@ -23,8 +23,10 @@ jobs:
     - name: Сheck if the repository is private
       if: ${{github.event.repository.private}}
       run: exit 1
+    - name: Install dependencies
+      run: npm i
     - name: Get testing lib
-      run: set -eu && git clone https://github.com/Ser4eese/kemsu_praktik_test /tmp/tests
+      run: set -eu && git clone https://github.com/Ser4eese/kemsu_praktik_test.git /tmp/tests
     - name: Run tests (0-module)
       if: ${{github.head_ref >= '0-module'}}
-      run: echo /tmp/tests
+      run: cp /tmp/tests/tests/0-module.test.js ./0-module && npm test
