@@ -24,7 +24,7 @@ jobs:
       if: ${{github.event.repository.private}}
       run: exit 1
     - name: Get testing lib
-      run: set -eu && git clone https://github.com/Ser4eese/kemsu_praktik_test /tmp/
+      run: set -eu && git clone https://github.com/Ser4eese/kemsu_praktik_test ./
     - name: Run tests (0-module)
       if: ${{github.head_ref >= '0-module'}}
       run: ls /tmp/tests
