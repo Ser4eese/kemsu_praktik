@@ -1,0 +1,3 @@
+export function checkSpam(str) {
+    // ваш код...
+}
