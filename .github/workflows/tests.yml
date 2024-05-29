@@ -25,11 +25,6 @@ jobs:
       run: exit 1
     - name: Get testing lib
       run: set -eu && git clone https://github.com/Ser4eese/kemsu_praktik_test /tmp/tests
-
     - name: Run tests (0-module)
       if: ${{github.head_ref >= '0-module'}}
-<<<<<<< HEAD
-      run: cp /tmp/tests/0-module.test.js ./0-module && npm test
-=======
-      run: cp /tmp/tests/0-module.test.js ./0-module && npm test
->>>>>>> 18a71b1925ab55afc2b36eb4f653d61d27a2ccfd
+      run: echo /tmp/tests && cp /tmp/tests/0-module.test.js ./0-module && npm test
