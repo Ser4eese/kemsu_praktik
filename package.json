@@ -2,10 +2,9 @@
   "name": "kemsu_praktik",
   "version": "1.0.0",
   "description": "Test Description",
-  "main": "index.js",
   "scripts": {
-    "test": "vitest --ui",
-    "coverage": "vitest run --coverage"
+    "test:ui": "vitest --ui",
+    "test": "vitest"
   },
   "repository": {
     "type": "git",
